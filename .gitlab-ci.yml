@@ -1,0 +1,19 @@
+stages:
+  - scan
+  
+domain_status_checker:
+  stage: scan
+  image: alpine:latest 
+  tags:
+    - ####INSERT TAG###
+
+  when: manual
+  before_script:
+    - chmod +x ci-script.sh
+    - ./ci-script.sh
+  script:
+    - python3 checkDomains.py
+
+  artifacts:
+    paths:
+      - active_domains.txt
