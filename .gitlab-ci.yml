@@ -5,7 +5,7 @@ domain_status_checker:
   stage: scan
   image: alpine:latest 
   tags:
-    - ####INSERT TAG###
+    - INSERT TAG
 
   when: manual
   before_script:
